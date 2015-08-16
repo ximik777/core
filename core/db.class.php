@@ -1,7 +1,5 @@
 <?php
 
-namespace JT;
-
 class DB {
 
     protected static $instance;
