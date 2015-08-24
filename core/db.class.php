@@ -1,6 +1,8 @@
 <?php
 
-class DB {
+namespace JT;
+
+class db {
 
     protected static $instance;
     protected $handle;
@@ -21,7 +23,7 @@ class DB {
 
     protected function __clone(){}
 
-    public static function getInstance($config = array()){
+    public static function init($config = array()){
         if (!isset(self::$instance)) {
             self::$instance = new self($config);
         }

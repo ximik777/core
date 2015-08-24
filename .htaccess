@@ -1,0 +1,19 @@
+php_flag display_errors on
+php_flag register_globals off
+
+AddDefaultCharset utf-8
+AddCharset utf-8 .js
+
+RedirectMatch 404 "(?:.*)/(?:\.git|.gitignore|.gitmodules)(?:/.*)?$"
+
+RewriteEngine On
+RewriteBase /
+RewriteRule ^(images|svg|css|js|font|swf|reboot|langs)/(.+)$ /static/$1/$2 [QSA,L]
+RewriteRule ^captcha\.png$ /captcha.php [L]
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule . index.php [L]
+
+Options -Indexes +FollowSymLinks -MultiViews
+Order allow,deny
+allow from all

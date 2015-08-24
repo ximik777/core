@@ -1,6 +1,8 @@
 <?php
 
-class MC {
+namespace JT;
+
+class mc {
 
     protected static $instance;
 
@@ -17,7 +19,7 @@ class MC {
 
     protected function __clone(){}
 
-    public static function getInstance($config = array()){
+    public static function mc($config = array()){
         if (!isset(self::$instance)) {
             self::$instance = new self($config);
         }
